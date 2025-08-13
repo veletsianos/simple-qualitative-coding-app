@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import { useAppStore } from '../store/appStore';
-import { Segment } from '../types';
+import type { Segment } from '../types';
 import { format } from 'date-fns';
 import { TRUNCATED_SNIPPET_LENGTH } from '../utils/constants';
 
@@ -56,7 +56,7 @@ export const SegmentList: React.FC = () => {
     if (!isCurrentlySelected) {
       const segment = segments.find(s => s.id === segmentId);
       if (segment) {
-        const paragraphElement = document.querySelector(`[data-paragraph-index="${segment.paragraphIndex}"]`);
+        const paragraphElement = window.document.querySelector(`[data-paragraph-index="${segment.paragraphIndex}"]`);
         if (paragraphElement) {
           paragraphElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }

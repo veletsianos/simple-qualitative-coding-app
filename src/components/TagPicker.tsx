@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { useAppStore } from '../store/appStore';
-import { SelectionData } from '../types';
+import type { SelectionData } from '../types';
 import { validateSegmentCreation, validateTags, validateMemo } from '../utils/validation';
 
 interface TagPickerProps {
@@ -37,8 +37,8 @@ export const TagPicker: React.FC<TagPickerProps> = ({ selection, onClose, onSegm
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    window.document.addEventListener('keydown', handleKeyDown);
+    return () => window.document.removeEventListener('keydown', handleKeyDown);
   }, [selectedTags, memo, onClose]);
 
   useEffect(() => {
@@ -48,8 +48,8 @@ export const TagPicker: React.FC<TagPickerProps> = ({ selection, onClose, onSegm
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    window.document.addEventListener('mousedown', handleClickOutside);
+    return () => window.document.removeEventListener('mousedown', handleClickOutside);
   }, [onClose]);
 
   const filteredTags = existingTags.filter(tag =>

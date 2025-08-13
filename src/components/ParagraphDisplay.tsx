@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import { useAppStore } from '../store/appStore';
 import { useSelection } from '../hooks/useSelection';
-import { Segment } from '../types';
+import type { Segment } from '../types';
 
 export const ParagraphDisplay: React.FC = () => {
   const { document, segments, selectedSegmentId, filterTag } = useAppStore();

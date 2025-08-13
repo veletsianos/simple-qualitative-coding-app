@@ -3,7 +3,7 @@ import { useAppStore } from '../store/appStore';
 
 export function usePersistence() {
   const { load, save, dirty } = useAppStore();
-  const saveTimeoutRef = useRef<NodeJS.Timeout>();
+  const saveTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   // Load data on mount
   useEffect(() => {

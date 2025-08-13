@@ -19,7 +19,7 @@ export const ParagraphDisplay: React.FC = () => {
     return map;
   }, [segments]);
 
-  const getSegmentBackgroundColor = (segment: Segment, index: number) => {
+  const getSegmentBackgroundColor = (_segment: Segment, index: number) => {
     const colors = [
       'bg-yellow-200',
       'bg-blue-200', 

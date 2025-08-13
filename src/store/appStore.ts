@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { nanoid } from 'nanoid';
 import { get, set } from 'idb-keyval';
-import { AppStore, QualitativeDocument, Segment } from '../types';
+import type { AppStore, QualitativeDocument, Segment } from '../types';
 import { exportToCSV } from '../utils/csvExport';
 
 const STORAGE_KEY = 'qualitative-coding-app';

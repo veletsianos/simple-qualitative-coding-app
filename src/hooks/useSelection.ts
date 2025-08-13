@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from 'react';
-import { SelectionData } from '../types';
+import type { SelectionData } from '../types';
 
 export interface UseSelectionReturn {
   selection: SelectionData | null;
